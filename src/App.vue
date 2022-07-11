@@ -11,71 +11,93 @@ export default {
 </script>
 
 <template>
-  <div class="main">
-    <div class="header">
-      <h1>Formulário para compra de Pacote de adesivos</h1>
-      <span><img src="" alt="" /></span>
-    </div>
-    <form class="form" v-on:submit.prevent="onSubmit">
-      <div class="form__question">
-        <label class="form__question__title" for="">Quais adesivos:</label>
-        <div>
-          <input type="checkbox" value="React" name="React" /><label
-            >React</label
-          ><br />
-          <input type="checkbox" value="Vue" name="Vue" /><label>Vue</label
-          ><br />
-          <input type="checkbox" value="Angular" name="Angular" /><label>
-            Angular</label
-          ><br />
+  <div class="background">
+    <div class="main">
+      <div class="header">
+        <h1>Formulário para compra de Pacote de adesivos</h1>
+        <span><img src="" alt="" /></span>
+      </div>
+      <form class="form" v-on:submit.prevent="onSubmit">
+        <div class="form__question">
+          <label class="form__question__title" for="">Quais adesivos:</label>
+          <div>
+            <input type="checkbox" value="React" name="React" /><label
+              >React</label
+            ><br />
+            <input type="checkbox" value="Vue" name="Vue" /><label>Vue</label
+            ><br />
+            <input type="checkbox" value="Angular" name="Angular" /><label>
+              Angular</label
+            ><br />
+          </div>
         </div>
-      </div>
-      <div class="form__question">
-        <Counter />
-      </div>
-      <div class="form__question">
-        <label class="form__question__title">Observações</label>
-        <textarea placeholder="Alguma dúvida? Recado?"></textarea>
-      </div>
-      <div class="form__question">
-        <label class="form__question__title">Tipo de pagamento:</label>
-        <label><input type="radio" v-model="showFirst" value="pix" />Pix</label
-        ><br />
-        <label
-          ><input
-            type="radio"
-            v-model="showFirst"
-            value="boleto"
-          />Boleto</label
-        ><br />
-        <label
-          ><input type="radio" v-model="showFirst" value="cartao" />Cartao de
-          Credito</label
-        >
-      </div>
+        <div class="form__question">
+          <Counter />
+        </div>
+        <div class="form__question">
+          <label class="form__question__title">Observações</label>
+          <textarea
+            class="form__textarea"
+            rows="8"
+            cols="50"
+            placeholder="Alguma dúvida? Recado?"
+          ></textarea>
+        </div>
+        <div class="form__question">
+          <label class="form__question__title">Tipo de pagamento:</label>
+          <label
+            ><input type="radio" v-model="showFirst" value="pix" />Pix</label
+          ><br />
+          <label
+            ><input
+              type="radio"
+              v-model="showFirst"
+              value="boleto"
+            />Boleto</label
+          ><br />
+          <label
+            ><input type="radio" v-model="showFirst" value="cartao" />Cartao de
+            Credito</label
+          >
+        </div>
 
-      <div v-if="showFirst === 'pix'">Pix</div>
-      <div v-else-if="showFirst === 'boleto'">Boleto</div>
-      <div v-else-if="showFirst === 'cartao'">Cartao de Credito</div>
-      <div v-else-if="showFirst === ''">Selecione algum tipo de pagamento</div>
+        <div v-if="showFirst === 'pix'">Pix</div>
+        <div v-else-if="showFirst === 'boleto'">Boleto</div>
+        <div v-else-if="showFirst === 'cartao'">Cartao de Credito</div>
+        <div v-else-if="showFirst === ''">
+          Selecione algum tipo de pagamento
+        </div>
 
-      <div class="form__send">
-        <button class="form__send__button">Enviar</button>
-      </div>
-    </form>
+        <div class="form__send">
+          <button class="form__send__button">Enviar</button>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
 <style>
+.background {
+  background-color: #8a2be2;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .main {
   width: 30%;
-  margin: 0 auto;
+  margin: auto auto;
   background-color: #f2f2f2 !important;
-  height: 100%;
+  height: 90%;
+  padding: 20px 40px;
 }
 
 .form {
   background-color: #f2f2f2;
+}
+
+.form__textarea {
 }
 
 .form__question {
