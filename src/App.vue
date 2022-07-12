@@ -1,10 +1,7 @@
 <script>
-import Counter from "./components/counter.vue";
-import Boleto from "./components/boleto.vue";
-import Pix from "./components/pix.vue";
-import Cartao from "./components/cartao.vue";
 import MainQs from "./pages/MainQs.vue";
 import Payment from "./pages/Payment.vue";
+import Confirmation from "./pages/Confirmation.vue";
 export default {
   data() {
     return {
@@ -15,11 +12,29 @@ export default {
   ready: function () {
     console.log("ready");
   },
-  components: { Counter, Boleto, Pix, Cartao, MainQs, Payment },
+  methods: {
+    goToStep: function (step) {
+      if (step < 4) {
+        this.activePhase = step;
+      } else {
+        this.activePhase = 1;
+      }
+    },
+    showText: function () {
+      if (this.activePhase == 1) {
+        return "Proximo";
+      } else if (this.activePhase == 2) {
+        return "Pagar";
+      } else {
+        return "Concluir";
+      }
+    },
+  },
+  components: { MainQs, Payment, Confirmation },
 };
 </script>
 
-<template id="user_detail1" v-if="activePhase == 1">
+<template>
   <div class="background">
     <div class="main">
       <div class="header">
@@ -42,8 +57,18 @@ export default {
           </svg>
         </span>
       </div>
-      <MainQs />
-      <Payment />
+      <MainQs v-if="activePhase == 1" />
+      <Payment v-if="activePhase == 2" />
+      <Confirmation v-if="activePhase == 3" />
+      <div class="form__send">
+        <button
+          type="submit"
+          class="form__send__button"
+          @click.prevent="goToStep(activePhase + 1)"
+        >
+          {{ showText() }}
+        </button>
+      </div>
     </div>
   </div>
 </template>

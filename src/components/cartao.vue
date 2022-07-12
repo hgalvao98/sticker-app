@@ -1,13 +1,9 @@
-<script>
-const alert = () => {
-  alert("Card saved!");
-};
-</script>
+<script></script>
 
 <template>
   <div class="card">
     <h1 class="card__title">Cartão de crédito</h1>
-    <form v-on:submit="alert">
+    <form v-on:submit="">
       <div class="form__field">
         <label>Numero do cartão</label>
         <input required />
