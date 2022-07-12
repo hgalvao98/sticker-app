@@ -7,7 +7,9 @@ import Counter from "../components/counter.vue";
     <div class="form__question">
       <label class="form__question__title" for="">Quais adesivos:</label>
       <div class="form__question__sticker">
-        <input type="checkbox" value="React" name="React" /><label>React</label>
+        <input type="checkbox" required value="React" name="React" /><label
+          >React</label
+        >
       </div>
       <div class="form__question__sticker">
         <input type="checkbox" value="Vue" name="Vue" /><label>Vue</label>
