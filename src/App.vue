@@ -62,6 +62,14 @@ export default {
       <Confirmation v-if="activePhase == 3" />
       <div class="form__send">
         <button
+          v-if="activePhase == 2"
+          type="submit"
+          class="form__send__button"
+          @click.prevent="goToStep(activePhase - 1)"
+        >
+          Voltar
+        </button>
+        <button
           type="submit"
           class="form__send__button"
           @click.prevent="goToStep(activePhase + 1)"
