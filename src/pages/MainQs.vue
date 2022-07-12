@@ -30,9 +30,5 @@ import Counter from "../components/counter.vue";
         placeholder="Alguma dúvida? Recado?"
       ></textarea>
     </div>
-
-    <div class="form__send">
-      <button type="submit" class="form__send__button">Enviar</button>
-    </div>
   </form>
 </template>
