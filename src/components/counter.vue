@@ -5,15 +5,26 @@ export default {
       count: 0,
     };
   },
+  props: ["info"],
+  methods: {
+    getInfo: function () {
+      this.info.qnt = this.count;
+    },
+  },
 };
 </script>
 
 <template>
+  {{ getInfo() }}
   <label class="form__question__title">Quantos adesivos de cada?</label>
   <div class="form__counter">
-    <button class="button__counter" @click="count--">-</button>
+    <button class="button__counter" jest="decrement-button" @click="count--">
+      -
+    </button>
     <span class="count">{{ count }}</span>
-    <button class="button__counter" @click="count++">+</button>
+    <button class="button__counter" jest="increment-button" @click="count++">
+      +
+    </button>
   </div>
 </template>
 

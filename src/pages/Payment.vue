@@ -8,12 +8,19 @@ export default {
       showFirst: "",
     };
   },
+  props: ["info"],
   components: { Pix, Boleto, Cartao },
+  methods: {
+    addToInfo: function () {
+      this.info.pay = this.showFirst;
+    },
+  },
 };
 </script>
 
 <template>
-  <form class="payment">
+  {{ addToInfo() }}
+  <form class="payment" v-on:submit.prevent="onSubmit">
     <div class="form__question">
       <label class="form__question__title">Tipo de pagamento:</label>
       <label class="form__options"

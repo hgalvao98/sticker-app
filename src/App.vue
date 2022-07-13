@@ -7,7 +7,12 @@ export default {
     return {
       showFirst: "",
       activePhase: 1,
-      information: [],
+      info: {
+        stickers: [],
+        qnt: 0,
+        obs: "",
+        pay: [],
+      },
     };
   },
   ready: function () {
@@ -19,6 +24,9 @@ export default {
         this.activePhase = step;
       } else {
         this.activePhase = 1;
+      }
+      if (this.activePhase == 1) {
+        this.info = this.info;
       }
     },
     showText: function () {
@@ -56,9 +64,9 @@ export default {
           </svg>
         </span>
       </div>
-      <MainQs v-if="activePhase == 1" />
-      <Payment v-if="activePhase == 2" />
-      <Confirmation v-if="activePhase == 3" />
+      <MainQs v-if="activePhase == 1" v-bind:info="info" />
+      <Payment v-if="activePhase == 2" v-bind:info="info" />
+      <Confirmation v-if="activePhase == 3" v-bind:info="info" />
       <div class="form__send">
         <button
           v-if="activePhase == 2"

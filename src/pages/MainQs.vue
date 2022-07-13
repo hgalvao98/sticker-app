@@ -1,31 +1,64 @@
-<script setup>
+<script>
 import Counter from "../components/counter.vue";
+export default {
+  data() {
+    return {
+      stickers: [],
+      info: this.info,
+      observations: "",
+    };
+  },
+  props: ["info"],
+  methods: {
+    getInfo: function () {
+      this.info.stickers = this.stickers;
+      this.info.obs = this.observations;
+      console.log(this.info);
+    },
+  },
+  components: { Counter },
+};
 </script>
 
 <template>
+  {{ getInfo() }}
   <form class="form" v-on:submit.prevent="onSubmit">
     <div class="form__question">
-      <label class="form__question__title" for="">Quais adesivos:</label>
+      <label class="form__question__title" required for=""
+        >Quais adesivos:</label
+      >
       <div class="form__question__sticker">
-        <input type="checkbox" required value="React" name="React" /><label
-          >React</label
-        >
+        <input
+          type="checkbox"
+          v-model="stickers"
+          value="React"
+          name="React"
+        /><label>React</label>
       </div>
       <div class="form__question__sticker">
-        <input type="checkbox" value="Vue" name="Vue" /><label>Vue</label>
+        <input
+          type="checkbox"
+          v-model="stickers"
+          value="Vue"
+          name="Vue"
+        /><label>Vue</label>
       </div>
       <div class="form__question__sticker">
-        <input type="checkbox" value="Angular" name="Angular" /><label
-          >Angular</label
-        >
+        <input
+          type="checkbox"
+          v-model="stickers"
+          value="Angular"
+          name="Angular"
+        /><label>Angular</label>
       </div>
     </div>
     <div class="form__question">
-      <Counter />
+      <Counter v-bind:info="info" />
     </div>
     <div class="form__question">
       <label class="form__question__title">Observações</label>
       <textarea
+        v-model="observations"
         class="form__textarea"
         rows="8"
         cols="50"
