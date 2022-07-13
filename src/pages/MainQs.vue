@@ -34,3 +34,34 @@ import Counter from "../components/counter.vue";
     </div>
   </form>
 </template>
+
+<style>
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 15px 30px;
+}
+
+.form__question {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form__question__title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.form__question__sticker > label {
+  margin-left: 5px;
+}
+
+textarea {
+  background-color: #dce3e9;
+  border-radius: 5px;
+  border: 1px solid #2f3676;
+  padding: 10px;
+}
+</style>
