@@ -15,9 +15,6 @@ export default {
       },
     };
   },
-  ready: function () {
-    console.log("ready");
-  },
   methods: {
     goToStep: function (step) {
       if (step < 4) {
@@ -71,6 +68,7 @@ export default {
         <button
           v-if="activePhase == 2"
           type="submit"
+          jest="prev-button"
           class="form__send__button"
           @click.prevent="goToStep(activePhase - 1)"
         >
@@ -78,6 +76,7 @@ export default {
         </button>
         <button
           type="submit"
+          jest="next-button"
           class="form__send__button"
           @click.prevent="goToStep(activePhase + 1)"
         >
