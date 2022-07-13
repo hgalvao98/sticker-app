@@ -7,6 +7,7 @@ export default {
     return {
       showFirst: "",
       activePhase: 1,
+      information: [],
     };
   },
   ready: function () {
@@ -45,8 +46,6 @@ export default {
         <span class="box"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
-            width="160"
-            height="160"
             fill="#191847"
             class="bi bi-box-seam"
             viewBox="0 0 16 16"
@@ -84,127 +83,117 @@ export default {
 <style>
 .background {
   background-color: #8a2be2;
+  height: 100vh;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  /* padding: 10px 0; */
   justify-content: center;
-  min-height: 100vh;
 }
 
 .main {
-  width: 50%;
-  background-color: #f2f2f2;
-  min-height: 90%;
-  margin: 20px 0;
+  background-color: #f1f1f1;
   border-radius: 5px;
-}
-
-@media only screen and (min-width: 1600px) {
-  .main {
-    width: 30%;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  .box {
-    display: none;
-  }
+  min-height: fit-content;
+  position: relative;
+  width: 100%;
 }
 
 .header {
-  width: 100%;
-  height: 200px;
+  background-color: #2f3576;
+  height: 160px;
+  border-radius: 5px 5px 60% 50%;
   display: flex;
-  padding: 30px;
-  color: white;
-  font-size: 25px;
-  align-items: flex-start;
-  justify-content: flex-start;
+  flex-direction: row;
+  padding: 20px 30px;
   position: relative;
-  border-radius: 5px 5px 55% 20%;
-  background-color: #2f3575;
 }
 
 .header__text {
-  width: 40%;
+  color: white;
+  font-size: 20px;
+  font-weight: lighter;
+  max-width: 55%;
 }
 
-@media only screen and (max-width: 1080px) {
-  .header__text {
-    width: 50%;
-  }
+svg {
+  height: 120px;
+  width: 120px;
 }
 
 .box {
   position: absolute;
-  right: 11%;
+  right: 30px;
 }
 
 .bold {
   font-weight: 700;
 }
 
-input {
-  margin-right: 10px;
-}
-
-input,
-textarea {
-  background-color: #dce2e8;
-  border: 1px solid #2f3676;
-  border-radius: 5px;
-}
-
-textarea {
-  padding: 10px;
-}
-
-.form__question,
-.form__payment {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 40px;
-  gap: 10px;
-}
-
-.form__question__title {
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.form__question__sticker {
-  display: flex;
-  flex-direction: row;
-}
-
-.form__counter {
-  display: flex;
-  flex-direction: row;
-}
-
 .form__send {
-  background-color: #dce3e8;
-  height: 100px;
+  padding: 0 30px;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: flex-end;
+  position: relative;
+  background-color: #dce3e8;
+  height: 120px;
   border-radius: 0 0 5px 5px;
 }
 
-.form__send__button {
-  margin: 0 20px;
+.form__send button {
   background-color: #2f3676;
-  height: 30px;
   color: white;
-  padding: 2px 20px;
   text-transform: uppercase;
-  font-weight: 600;
+  padding: 10px 24px;
   border: none;
   border-radius: 5px;
+  font-weight: 600;
 }
 
-.form__send__button:hover {
+.form__send button:last-of-type {
+  position: absolute;
+  right: 0;
+  margin-right: 30px;
+}
+
+button:hover {
   transform: scale(1.1);
   cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .main {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1024px) {
+  .main {
+    width: 80%;
+  }
+
+  .box {
+    right: 60px;
+  }
+
+  .header__text {
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .main {
+    width: 40%;
+  }
+
+  .box {
+    right: 60px;
+  }
+
+  .header__text {
+    width: 30%;
+  }
 }
 </style>

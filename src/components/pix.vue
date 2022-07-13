@@ -22,34 +22,37 @@
 .pix {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
-  border: 1px solid #2f3676;
+  background-color: white;
   padding: 10px;
   border-radius: 5px;
 }
 
 .pix__logo {
-  width: 200px;
+  width: 100px;
 }
 
 .pix__qr {
-  width: 100px;
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
 }
 
 .pix__info {
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  gap: 30px;
 }
 
 .pix__cnpj {
+  margin-top: 10px;
   text-align: center;
-  margin-top: 6px;
 }
 
 .pix__cnpj:last-of-type {
-  background-color: #dce2e8;
+  padding: 2px 10px;
+  background-color: #dce3e9;
   border: 1px solid #2f3676;
   border-radius: 5px;
 }

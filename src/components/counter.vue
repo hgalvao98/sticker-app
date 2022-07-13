@@ -18,31 +18,26 @@ export default {
 </template>
 
 <style>
-.button__counter {
-  width: 35px;
-  height: 35px;
-  background-color: #2f3676;
-  color: white;
-  font-size: 30px;
+.form__counter {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  border: none;
 }
 
-.button__counter:hover {
-  transform: scale(1.1);
-  cursor: pointer;
+.button__counter {
+  color: white;
+  background-color: #2f3676;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
 }
 
 .count {
   margin: 0 10px;
-  padding: 2px 20px;
-  background-color: #dce2e8;
+  padding: 5px 20px;
+  background-color: #dce3e9;
   border: 1px solid #2f3676;
   border-radius: 5px;
-  display: flex;
-  align-items: center;
 }
 </style>

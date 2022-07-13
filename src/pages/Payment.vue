@@ -13,17 +13,15 @@ export default {
 </script>
 
 <template>
-  <form>
+  <form class="payment">
     <div class="form__question">
       <label class="form__question__title">Tipo de pagamento:</label>
-      <label
-        ><input type="radio" v-model="showFirst" value="pix" />Pix
+      <label class="form__options"
+        ><input type="radio" required v-model="showFirst" value="pix" />Pix
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
           fill="currentColor"
-          class="bi bi-qr-code"
+          class="icon bi bi-qr-code"
           viewBox="0 0 16 16"
         >
           <path d="M2 2h2v2H2V2Z" />
@@ -35,14 +33,12 @@ export default {
           <path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z" />
         </svg>
       </label>
-      <label
+      <label class="form__options"
         ><input type="radio" v-model="showFirst" value="boleto" />Boleto
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
           fill="currentColor"
-          class="bi bi-upc-scan"
+          class="icon bi bi-upc-scan"
           viewBox="0 0 16 16"
         >
           <path
@@ -50,15 +46,13 @@ export default {
           />
         </svg>
       </label>
-      <label
+      <label class="form__options"
         ><input type="radio" v-model="showFirst" value="cartao" />Cartao de
-        Credito
+        crédito
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
           fill="currentColor"
-          class="bi bi-credit-card"
+          class="icon bi bi-credit-card"
           viewBox="0 0 16 16"
         >
           <path
@@ -83,3 +77,29 @@ export default {
     </div>
   </form>
 </template>
+
+<style>
+.payment {
+  padding: 10px 30px;
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+  margin: 10px 10px;
+}
+
+label > input {
+  margin-right: 5px;
+}
+
+.form__options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.form__payment {
+  margin: 20px 0;
+}
+</style>
