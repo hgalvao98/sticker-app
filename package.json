@@ -7,7 +7,7 @@
   "scripts": {
     "build": "vite build",
     "test:unit": "vue-cli-service test:unit",
-    "start": "vite",
+    "start": "vite --host $PORT",
     "preview": "vite preview --port 4173"
   },
   "jest": {
