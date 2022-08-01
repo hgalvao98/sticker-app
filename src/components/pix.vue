@@ -2,7 +2,7 @@
   <div class="pix">
     <img class="pix__logo" src="../assets/imgs/logopix.jpg" />
     <div class="pix__info">
-      <img class="pix__qr" src="../assets/imgs/randomqr.JPG" />
+      <img class="pix__qr" src="../assets/imgs/randomqr.png" />
       <div class="pix__instructions">
         <div>
           <h4 class="pix__instructions__title">Pague com pix</h4>
